@@ -12,9 +12,7 @@ export default class HomeScreen extends Component {
     };
   }
 
-  componentDidMount() {
-    this.getMovie();
-  }
+  //make a componentDidMount function
 
   timeConvert(num) {
     var hours = Math.floor(num / 60);
@@ -22,6 +20,7 @@ export default class HomeScreen extends Component {
     return `${hours} hrs ${minutes} mins`;
   }
 
+  //make a getmovie function
   getMovie = () => {
     const url = "http://localhost:5000/get-movie";
     axios
@@ -35,7 +34,7 @@ export default class HomeScreen extends Component {
         console.log(error.message);
       });
   };
-
+// make a liked movie function
   likedMovie = () => {
     const url = "http://localhost:5000/liked-movie";
     axios
@@ -47,7 +46,7 @@ export default class HomeScreen extends Component {
         console.log(error.message);
       });
   };
-
+//make a unliked movie function
   unlikedMovie = () => {
     const url = "http://localhost:5000/unliked-movie";
     axios
@@ -59,7 +58,7 @@ export default class HomeScreen extends Component {
         console.log(error.message);
       });
   };
-
+//make a not watched movie function
   notWatched = () => {
     const url = "http://localhost:5000/did-not-watch";
     axios
@@ -126,7 +125,8 @@ export default class HomeScreen extends Component {
               </View>
               <View style={styles.lowerBottomContainer}>
                 <View style={styles.iconButtonContainer}>
-                  <TouchableOpacity onPress={this.likedMovie}>
+                    //call the liked movie function here
+                  <TouchableOpacity onPress={}>
                     <Icon
                       reverse
                       name={"check"}
@@ -135,7 +135,8 @@ export default class HomeScreen extends Component {
                       color={"#76ff03"}
                     />
                   </TouchableOpacity>
-                  <TouchableOpacity onPress={this.unlikedMovie}>
+                        //call the unliked movie function here
+                  <TouchableOpacity onPress={}>
                     <Icon
                       reverse
                       name={"cross"}
@@ -148,7 +149,8 @@ export default class HomeScreen extends Component {
                 <View style={styles.buttonCotainer}>
                   <TouchableOpacity
                     style={styles.button}
-                    onPress={this.notWatched}
+//call the not watched  movie function here
+                    onPress={}
                   >
                     <Text style={styles.buttonText}>Did not watch</Text>
                   </TouchableOpacity>
